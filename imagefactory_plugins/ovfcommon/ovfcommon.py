@@ -42,7 +42,7 @@ class RHEVOVFDescriptor(object):
             self.ovf_name = ovf_name
 
         if ovf_desc is None:
-            self.ovf_desc = "Created by Image Factory"
+            self.ovf_desc = "CloudForms 2.1 RHEL6.4"
         else:
             self.ovf_desc = ovf_desc
 
@@ -145,7 +145,7 @@ class RHEVOVFDescriptor(object):
 
         ete = ElementTree.Element('default_display_type')
         # vnc = 0, gxl = 1
-        ete.text = "0"
+        ete.text = "1"
         etcon.append(ete)
 
         ete = ElementTree.Element('default_boot_sequence')
@@ -166,7 +166,7 @@ class RHEVOVFDescriptor(object):
 
         ete = ElementTree.Element('Description')
         # This is rigid, must be "Other", "OtherLinux", "RHEL6", or such
-        ete.text = "OtherLinux"
+        ete.text = "RHEL6"
         etsec.append(ete)
 
         etcon.append(etsec)
@@ -175,7 +175,7 @@ class RHEVOVFDescriptor(object):
         etsec.set('xsi:type', "ovf:VirtualHardwareSection_Type")
 
         ete = ElementTree.Element('Info')
-        ete.text = "1 CPU, 512 Memory"
+        ete.text = "4 CPU, 6144 Memory"
         etsec.append(ete)
 
         etsys = ElementTree.Element('System')
@@ -188,7 +188,7 @@ class RHEVOVFDescriptor(object):
         etitem = ElementTree.Element('Item')
 
         ete = ElementTree.Element('rasd:Caption')
-        ete.text = "1 virtual CPU"
+        ete.text = "4 virtual CPU"
         etitem.append(ete)
 
         ete = ElementTree.Element('rasd:Description')
@@ -208,7 +208,7 @@ class RHEVOVFDescriptor(object):
         etitem.append(ete)
 
         ete = ElementTree.Element('rasd:cpu_per_socket')
-        ete.text = "1"
+        ete.text = "4"
         etitem.append(ete)
 
         etsec.append(etitem)
@@ -216,7 +216,7 @@ class RHEVOVFDescriptor(object):
         etitem = ElementTree.Element('Item')
 
         ete = ElementTree.Element('rasd:Caption')
-        ete.text = "512 MB of memory"
+        ete.text = "6144 MB of memory"
         etitem.append(ete)
 
         ete = ElementTree.Element('rasd:Description')
@@ -236,7 +236,7 @@ class RHEVOVFDescriptor(object):
         etitem.append(ete)
 
         ete = ElementTree.Element('rasd:VirtualQuantity')
-        ete.text = "512"
+        ete.text = "6144"
         etitem.append(ete)
 
         etsec.append(etitem)
