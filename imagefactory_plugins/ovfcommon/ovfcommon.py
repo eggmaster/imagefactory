@@ -42,7 +42,7 @@ class RHEVOVFDescriptor(object):
             self.ovf_name = ovf_name
 
         if ovf_desc is None:
-            self.ovf_desc = "CloudForms 2.1 RHEL6.4"
+            self.ovf_desc = "CloudForms 3.0 RHEL6.4"
         else:
             self.ovf_desc = ovf_desc
 
@@ -606,7 +606,7 @@ class VsphereOVFDescriptor(object):
         etprodsec.append(etvendor)
 
         etversion = ElementTree.Element('Version')
-        etversion.text = '2.1'
+        etversion.text = '3.0'
         etprodsec.append(etversion)
 
         etvirtsys.append(etprodsec)
